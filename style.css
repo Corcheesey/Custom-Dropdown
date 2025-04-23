@@ -27,6 +27,8 @@
 }
 
 .item {
+    display: flex;
+    justify-content: space-between;
     border: 2px solid black;
     padding: 7px 10px;
     width: 300px;
@@ -49,4 +51,8 @@
 
 .dropdownMenu:active, .item:active {
     background-color: lightgrey;
+}
+
+.show {
+    display: block;
 }
