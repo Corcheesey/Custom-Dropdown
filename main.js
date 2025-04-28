@@ -1,6 +1,7 @@
-const dropdownMenu = document.querySelector(".dropdownMenu");
+const dropdownMenu = document.getElementById("dropdownMenu");
 const itemContainer = document.getElementById("itemContainer");
 const arrow = document.getElementById("arrowIcon");
+const item = document.getElementsByClassName("item");
 
 // Toggle dropdown menu and change arrow icon direction
 dropdownMenu.addEventListener("click", () => {
@@ -10,6 +11,15 @@ dropdownMenu.addEventListener("click", () => {
     } else {
         arrow.innerHTML = "&#x56;";
     }
-})
+});
 
-// Toggle check mark icon when selecting an item
+// Select item from menu, replace placeholder text with selected item, and hide menu.
+for (const element of item) {
+    element.addEventListener("click", () => {
+        dropdownMenu.innerHTML = element.innerHTML;
+        itemContainer.style.visibility = "hidden";
+        arrow.innerHTML = "&#x56;";
+    })
+}
+
+// Next Feature: Highlight selected item in the menu
