@@ -49,6 +49,10 @@
     margin: 1px;
 }
 
+.item.selected {
+    background-color: yellow;
+}
+
 #firstItem {
     border-radius: 12px 12px 0px 0px;
 }
