@@ -13,13 +13,15 @@ dropdownMenu.addEventListener("click", () => {
     }
 });
 
-// Select item from menu, replace placeholder text with selected item, and hide menu.
+// Select item from menu, replace placeholder text with selected item, highlight selected item, and hide menu.
 for (const element of item) {
     element.addEventListener("click", () => {
+        for (const el of item) {
+            el.classList.remove("selected");
+        }
+        element.classList.add("selected");
         dropdownMenu.innerHTML = element.innerHTML;
         itemContainer.style.visibility = "hidden";
         arrow.innerHTML = "&#x56;";
     })
 }
-
-// Next Feature: Highlight selected item in the menu
